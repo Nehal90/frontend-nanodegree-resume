@@ -85,6 +85,12 @@ p {
   line-height: 21px;
 }
 
+p2 {
+  font-size: 14px;
+  color: #398;
+  line-height: 15px;
+}
+
 a {
   color: #1199c3;
   text-decoration: none;

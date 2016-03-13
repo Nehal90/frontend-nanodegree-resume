@@ -12,6 +12,7 @@
  var bio = {
  	"name" : "Ahmed Nehal",
  	"role" : "Application Developer",
+    "welcomeMessage" : "Hello World! Welcome to my resume page.",
  	"contacts" : {
  		"mobile" : "201-362-5832",
  		"email" : "an425@live.com",
@@ -20,14 +21,14 @@
  		"location" : "Jersey City"
  	},
  	"skills" : {
- 		"0" : "Programming Languages: <br />Java**, Python**, C++*, Android, Swift, JCL",
-        "1" : "Database Systems: <br />MySQL**, PostgreSQL**, SqlAlchemy*, DB2",
-        "2" : "Scripts: <br />UNIX**, Linux** (Ubuntu), Git Bash**, Rexx, OMVS",
-        "3" : "WebDevelopment: <br />HTML5**, CSS**, JavaScript*, jQuery*, XML*, JSON*, Bootstrap*, AngularJS*",
-        "4" : "IDE: <br />Eclipse J2EE**, ISPF**, Xcode*, Android Studio*, JetBrains PyCharm*, NetBeans*",
-        "5" : "Tools: <br />GitHub**, Vagrant**, Jenkins*, SourceTree*, HP UFT*, HP Fortify*, Apache Tomcat*",
-        "6": "Frameworks: <br />OOP**, Spring*, Flask*, JAX-RS, ORM, MVC",
-        "7" : "AgileMethodologies: <br />Scrum**, Kanban*, XP, Pair Programming"
+ 		"0" : "<p2>Programming Languages:</p2> Java**, Python**, C++*, Android, Swift, JCL",
+        "1" : "<p2>Database Systems:</p2> MySQL**, PostgreSQL**, SqlAlchemy*, DB2",
+        "2" : "<p2>Scripts: </p2> UNIX**, Linux** (Ubuntu), Git Bash**, Rexx, OMVS",
+        "3" : "<p2>WebDevelopment:</p2> HTML5**, CSS**, JavaScript*, jQuery*, XML*, JSON*, Bootstrap*, AngularJS*",
+        "4" : "<p2>IDE:</p2> Eclipse J2EE**, ISPF**, Xcode*, Android Studio*, JetBrains PyCharm*, NetBeans*",
+        "5" : "<p2>Tools:</p2> GitHub**, Vagrant**, Jenkins*, SourceTree*, HP UFT*, HP Fortify*, Apache Tomcat*",
+        "6": "<p2>Frameworks:</p2> OOP**, Spring*, Flask*, JAX-RS, ORM, MVC",
+        "7" : "<p2>AgileMethodologies:</p2> Scrum**, Kanban*, XP, Pair Programming"
     },
  	"bioPic" : "images/me.jpg"
  }
@@ -171,6 +172,7 @@
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contacts);
+var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
@@ -189,6 +191,7 @@ var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
                   .append(formattedEmail)
                   .append(formattedLinkedIn);
  $("#header").append(formattedBioPic);
+ $("#header").append(formattedMessage);
  $("#header").append(HTMLskillsStart);
 
      for(skill in bio.skills)
