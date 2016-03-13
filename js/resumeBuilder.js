@@ -1,5 +1,6 @@
 //author = "Ahmed Nehal"
 
+//making sure that unwanted characters like < and > don't get through. 
  var charEscape = function(_html) {
     var newHTML = _html;
 
@@ -8,6 +9,8 @@
 
     return newHTML;
 };
+
+//JSON data for bio 
 
  var bio = {
  	"name" : "Ahmed Nehal",
@@ -32,6 +35,8 @@
     },
  	"bioPic" : "images/me.jpg"
  }
+ 
+ //JSON data for work
  
   var work = {
  	"jobs" : 
@@ -67,6 +72,8 @@
  	}
    ]
  }
+
+//JSON data for projects 
   
   var projects = {
 	"school_projects" : 
@@ -146,6 +153,8 @@
     }
   ]
 }
+
+//JSON data for education
   
   var education = {
 	"schools" : 
@@ -168,7 +177,8 @@
     ]
 }
 
- 
+//processing data for bio section 
+  
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contacts);
@@ -180,6 +190,8 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedLinkedIn = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+
+//appending data to the HTML page
 
  $("#header").prepend(formattedRole)
              .prepend(formattedName);
@@ -313,10 +325,14 @@ function locationizer(work_obj){
     return locationArray;    
 }
 
+//adding the displays for work, education and projects
+
 displayWork();
 education.display();
 projects.display();
 
+//appending internationalization button to the page
 $('#main').append(internationalizeButton);
 
+//appending google map to the page
 $("#mapDiv").append(googleMap);
